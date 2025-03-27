@@ -1,0 +1,96 @@
+{
+    "page": {
+      "name": "Crypto Processing Landing",
+      "blocks": [
+        {
+          "type": "hero",
+          "props": {
+            "title": "Принимайте криптовалюту от клиентов по всему миру",
+            "subtitle": "Криптопроцессинг для бизнеса с мгновенной конвертацией в фиат и защитой от волатильности",
+            "buttonText": "Подключиться за 24 часа",
+            "buttonLink": "#form"
+          }
+        },
+        {
+          "type": "how-it-works",
+          "props": {
+            "title": "Как это работает",
+            "steps": [
+              "Клиент оплачивает в криптовалюте",
+              "AfiPay принимает и конвертирует",
+              "Вы получаете EUR/USD на счёт",
+              "Минимальная комиссия от 0.5%"
+            ],
+            "features": ["Без волатильности", "Без подписки", "Без интеграционных сложностей"]
+          }
+        },
+        {
+          "type": "use-cases",
+          "props": {
+            "title": "Для кого это решение",
+            "items": [
+              { "icon": "saas", "text": "SaaS проекты" },
+              { "icon": "casino", "text": "Gambling & Betting" },
+              { "icon": "exchange", "text": "Криптообменники" },
+              { "icon": "freelance", "text": "Фриланс и IT-компании" }
+            ]
+          }
+        },
+        {
+          "type": "features",
+          "props": {
+            "title": "Надёжность и безопасность",
+            "items": [
+              "Холодное хранение (Ledger, Trezor)",
+              "AML-риск-скоринг",
+              "2FA и IP whitelist",
+              "Внешние аудиторы",
+              "55+ криптовалют и 14 блокчейнов"
+            ]
+          }
+        },
+        {
+          "type": "pricing",
+          "props": {
+            "title": "Прозрачные комиссии",
+            "table": [
+              { "item": "Комиссия на входящие", "value": "от 0.5%" },
+              { "item": "Сеть (network fee)", "value": "по сети" },
+              { "item": "Вывод средств", "value": "0%" },
+              { "item": "Подключение", "value": "бесплатно" },
+              { "item": "Объёмы до €1M", "value": "0.9%" },
+              { "item": "Объёмы от €3M", "value": "от 0.8%" }
+            ]
+          }
+        },
+        {
+          "type": "form",
+          "props": {
+            "title": "Оставьте заявку — подключим за 24 часа",
+            "fields": [
+              { "label": "Имя", "name": "name", "type": "text" },
+              { "label": "Компания", "name": "company", "type": "text" },
+              { "label": "Email / Telegram", "name": "contact", "type": "text" },
+              { "label": "Комментарий", "name": "message", "type": "textarea" }
+            ],
+            "buttonText": "Отправить",
+            "submitAction": {
+              "type": "webhook",
+              "url": "https://hooks.zapier.com/hooks/catch/your-webhook-id/"
+            }
+          }
+        },
+        {
+          "type": "contacts",
+          "props": {
+            "title": "Контакты",
+            "items": [
+              { "type": "email", "label": "ib@afipay.io" },
+              { "type": "telegram", "label": "@ib_afipay" },
+              { "type": "website", "label": "afipay.io" }
+            ]
+          }
+        }
+      ]
+    }
+  }

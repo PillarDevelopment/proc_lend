@@ -1,0 +1,61 @@
+{
+  "mcpServers": {
+    "mcp-installer": {
+      "command": "npx",
+      "args": [
+        "@anaisbetts/mcp-installer"
+      ]
+    },
+    "sequential-thinking": {
+      "command": "npx",
+      "args": [
+        "@modelcontextprotocol/server-sequential-thinking"
+      ]
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "@modelcontextprotocol/server-filesystem",
+        "/Users/ivanborisov/Library/Application Support/Claude",
+        "/Users/ivanborisov/Desktop"
+      ]
+    },
+    "github": {
+         "command": "npx",
+         "args": ["-y", "@modelcontextprotocol/server-github"],
+         "env": {
+           "GITHUB_PERSONAL_ACCESS_TOKEN": " >"
+         }
+       },
+       "postgres": {
+         "command": "npx",
+         "args": ["-y", "@modelcontextprotocol/server-postgres", "postgresql://localhost/mydb"]
+       },
+       "iterm-mcp": {
+         "command": "npx",
+         "args": [
+           "-y",
+           "iterm-mcp"
+         ]
+       },
+    "brave-search": {
+          "command": "npx",
+          "args": [
+            "-y",
+            "@modelcontextprotocol/server-brave-search"
+          ],
+          "env": {
+            "BRAVE_API_KEY": " "
+          }
+        },
+    "tavily-mcp": {
+      "command": "npx",
+      "args": [
+        "tavily-mcp@0.1.2"
+      ],
+      "env": {
+        "TAVILY_API_KEY": " "
+      }
+    }
+  }
+}
