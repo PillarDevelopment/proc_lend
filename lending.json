@@ -5,10 +5,16 @@
         {
           "type": "hero",
           "props": {
-            "title": "Accept Cryptocurrency Payments from Clients Worldwide",
-            "subtitle": "Crypto processing for business with instant fiat conversion and volatility protection",
+            "title": "SECURE CRYPTO PAYMENT SOLUTION FOR BUSINESS",
+            "subtitle": "Start accepting cryptocurrency today to get access to millions of new customers worldwide, while saving up to 80% on processing fees.",
             "buttonText": "Get Started in 24 Hours",
-            "buttonLink": "#form"
+            "buttonLink": "https://t.me/ib_afipay",
+            "stats": [
+              { "value": "10+", "label": "Years of expertise" },
+              { "value": "800+", "label": "Merchant accounts" },
+              { "value": "1M+", "label": "Transactions/month" },
+              { "value": "200+", "label": "Team members" }
+            ]
           }
         },
         {
@@ -61,23 +67,6 @@
               { "item": "Volume up to €1M", "value": "0.9%" },
               { "item": "Volume from €3M", "value": "from 0.8%" }
             ]
-          }
-        },
-        {
-          "type": "form",
-          "props": {
-            "title": "Leave a Request - We'll Connect You in 24 Hours",
-            "fields": [
-              { "label": "Name", "name": "name", "type": "text" },
-              { "label": "Company", "name": "company", "type": "text" },
-              { "label": "Email / Telegram", "name": "contact", "type": "text" },
-              { "label": "Message", "name": "message", "type": "textarea" }
-            ],
-            "buttonText": "Send",
-            "submitAction": {
-              "type": "webhook",
-              "url": "https://hooks.zapier.com/hooks/catch/your-webhook-id/"
-            }
           }
         },
         {

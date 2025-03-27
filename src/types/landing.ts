@@ -17,6 +17,10 @@ export interface HeroProps {
   subtitle: string;
   buttonText: string;
   buttonLink: string;
+  stats: Array<{
+    value: string;
+    label: string;
+  }>;
 }
 
 export interface HowItWorksProps {
