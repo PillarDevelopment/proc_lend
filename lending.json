@@ -5,75 +5,75 @@
         {
           "type": "hero",
           "props": {
-            "title": "Принимайте криптовалюту от клиентов по всему миру",
-            "subtitle": "Криптопроцессинг для бизнеса с мгновенной конвертацией в фиат и защитой от волатильности",
-            "buttonText": "Подключиться за 24 часа",
+            "title": "Accept Cryptocurrency Payments from Clients Worldwide",
+            "subtitle": "Crypto processing for business with instant fiat conversion and volatility protection",
+            "buttonText": "Get Started in 24 Hours",
             "buttonLink": "#form"
           }
         },
         {
           "type": "how-it-works",
           "props": {
-            "title": "Как это работает",
+            "title": "How It Works",
             "steps": [
-              "Клиент оплачивает в криптовалюте",
-              "AfiPay принимает и конвертирует",
-              "Вы получаете EUR/USD на счёт",
-              "Минимальная комиссия от 0.5%"
+              "Client pays in cryptocurrency",
+              "AfiPay accepts and converts",
+              "You receive EUR/USD to your account",
+              "Minimum fee from 0.5%"
             ],
-            "features": ["Без волатильности", "Без подписки", "Без интеграционных сложностей"]
+            "features": ["No Volatility", "No Subscription", "No Integration Complexity"]
           }
         },
         {
           "type": "use-cases",
           "props": {
-            "title": "Для кого это решение",
+            "title": "Who It's For",
             "items": [
-              { "icon": "saas", "text": "SaaS проекты" },
+              { "icon": "saas", "text": "SaaS Projects" },
               { "icon": "casino", "text": "Gambling & Betting" },
-              { "icon": "exchange", "text": "Криптообменники" },
-              { "icon": "freelance", "text": "Фриланс и IT-компании" }
+              { "icon": "exchange", "text": "Crypto Exchanges" },
+              { "icon": "freelance", "text": "Freelance & IT Companies" }
             ]
           }
         },
         {
           "type": "features",
           "props": {
-            "title": "Надёжность и безопасность",
+            "title": "Reliability and Security",
             "items": [
-              "Холодное хранение (Ledger, Trezor)",
-              "AML-риск-скоринг",
-              "2FA и IP whitelist",
-              "Внешние аудиторы",
-              "55+ криптовалют и 14 блокчейнов"
+              "Cold Storage (Ledger, Trezor)",
+              "AML Risk Scoring",
+              "2FA and IP Whitelist",
+              "External Auditors",
+              "55+ Cryptocurrencies and 14 Blockchains"
             ]
           }
         },
         {
           "type": "pricing",
           "props": {
-            "title": "Прозрачные комиссии",
+            "title": "Transparent Fees",
             "table": [
-              { "item": "Комиссия на входящие", "value": "от 0.5%" },
-              { "item": "Сеть (network fee)", "value": "по сети" },
-              { "item": "Вывод средств", "value": "0%" },
-              { "item": "Подключение", "value": "бесплатно" },
-              { "item": "Объёмы до €1M", "value": "0.9%" },
-              { "item": "Объёмы от €3M", "value": "от 0.8%" }
+              { "item": "Incoming Fee", "value": "from 0.5%" },
+              { "item": "Network Fee", "value": "network rate" },
+              { "item": "Withdrawal", "value": "0%" },
+              { "item": "Setup", "value": "free" },
+              { "item": "Volume up to €1M", "value": "0.9%" },
+              { "item": "Volume from €3M", "value": "from 0.8%" }
             ]
           }
         },
         {
           "type": "form",
           "props": {
-            "title": "Оставьте заявку — подключим за 24 часа",
+            "title": "Leave a Request - We'll Connect You in 24 Hours",
             "fields": [
-              { "label": "Имя", "name": "name", "type": "text" },
-              { "label": "Компания", "name": "company", "type": "text" },
+              { "label": "Name", "name": "name", "type": "text" },
+              { "label": "Company", "name": "company", "type": "text" },
               { "label": "Email / Telegram", "name": "contact", "type": "text" },
-              { "label": "Комментарий", "name": "message", "type": "textarea" }
+              { "label": "Message", "name": "message", "type": "textarea" }
             ],
-            "buttonText": "Отправить",
+            "buttonText": "Send",
             "submitAction": {
               "type": "webhook",
               "url": "https://hooks.zapier.com/hooks/catch/your-webhook-id/"
@@ -83,7 +83,7 @@
         {
           "type": "contacts",
           "props": {
-            "title": "Контакты",
+            "title": "Contact Us",
             "items": [
               { "type": "email", "label": "ib@afipay.io" },
               { "type": "telegram", "label": "@ib_afipay" },
