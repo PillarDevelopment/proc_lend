@@ -63,9 +63,9 @@ export const Form = ({ title, fields, buttonText }: FormProps) => {
                   id={field.name}
                   name={field.name}
                   style={{
-                    backgroundColor: currentColors.inputBg,
-                    borderColor: currentColors.inputBorder,
-                    color: currentColors.inputText,
+                    backgroundColor: currentColors.cardBg,
+                    borderColor: currentColors.cardBorder,
+                    color: currentColors.text,
                   }}
                   className="w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-opacity-50 transition-colors duration-300"
                   rows={4}
@@ -76,9 +76,9 @@ export const Form = ({ title, fields, buttonText }: FormProps) => {
                   id={field.name}
                   name={field.name}
                   style={{
-                    backgroundColor: currentColors.inputBg,
-                    borderColor: currentColors.inputBorder,
-                    color: currentColors.inputText,
+                    backgroundColor: currentColors.cardBg,
+                    borderColor: currentColors.cardBorder,
+                    color: currentColors.text,
                   }}
                   className="w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-opacity-50 transition-colors duration-300"
                 />
@@ -92,9 +92,9 @@ export const Form = ({ title, fields, buttonText }: FormProps) => {
             transition={{ duration: 0.5, delay: fields.length * 0.1 }}
             type="submit"
             style={{
-              background: currentColors.buttonGradient,
+              background: `linear-gradient(to right, ${currentColors.accent}, ${currentColors.background})`,
               color: currentColors.text,
-              boxShadow: currentColors.buttonShadow,
+              boxShadow: `0 4px 6px -1px ${currentColors.accent}30`,
             }}
             className="w-full py-4 rounded-lg font-semibold text-lg hover:scale-105 hover:shadow-lg transition-all duration-300"
           >
