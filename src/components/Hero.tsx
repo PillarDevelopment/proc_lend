@@ -2,7 +2,7 @@ import { HeroProps } from '../types/landing';
 import { motion } from 'framer-motion';
 import { useTheme } from '../hooks/useTheme';
 
-export const Hero = ({ title, subtitle, buttonText, buttonLink }: HeroProps) => {
+export const Hero = ({ title, subtitle, buttonText, buttonLink, stats }: HeroProps) => {
   const { theme, toggleTheme } = useTheme();
 
   const colors = {
@@ -125,27 +125,20 @@ export const Hero = ({ title, subtitle, buttonText, buttonLink }: HeroProps) => 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.7 }}
-            className="flex flex-col md:flex-row items-center justify-center gap-4"
+            className="mb-12"
           >
             <a
               href={buttonLink}
               target="_blank"
               rel="noopener noreferrer"
               style={{
-                background: `linear-gradient(to right, ${currentColors.accent}, ${currentColors.background})`,
-                color: currentColors.text,
-                boxShadow: `0 4px 6px -1px ${currentColors.accent}30`,
+                backgroundColor: currentColors.accent,
+                color: currentColors.background,
               }}
-              className="inline-block px-16 py-6 rounded-lg font-semibold transition-all duration-300 text-lg hover:scale-105 hover:shadow-lg"
+              className="inline-block px-8 py-4 rounded-lg font-semibold text-lg hover:scale-105 transition-transform duration-300"
             >
               {buttonText}
             </a>
-            <div 
-              style={{ color: currentColors.text }}
-              className="text-sm"
-            >
-              *as cryptocurrency services supplier by the EGR B2B Awards 2023
-            </div>
           </motion.div>
 
           {/* Stats section */}
@@ -153,64 +146,34 @@ export const Hero = ({ title, subtitle, buttonText, buttonLink }: HeroProps) => 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.9 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20"
+            className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto"
           >
-            <div className="text-center">
-              <div 
-                style={{ color: currentColors.accent }}
-                className="text-3xl font-bold mb-2"
+            {stats.map((stat, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 1.1 + index * 0.1 }}
+                style={{
+                  backgroundColor: `${currentColors.accent}10`,
+                  borderColor: `${currentColors.accent}20`,
+                }}
+                className="p-6 rounded-lg border backdrop-blur-sm"
               >
-                10+
-              </div>
-              <div 
-                style={{ color: currentColors.text }}
-                className="text-sm"
-              >
-                Years of expertise
-              </div>
-            </div>
-            <div className="text-center">
-              <div 
-                style={{ color: currentColors.accent }}
-                className="text-3xl font-bold mb-2"
-              >
-                800+
-              </div>
-              <div 
-                style={{ color: currentColors.text }}
-                className="text-sm"
-              >
-                Merchant accounts
-              </div>
-            </div>
-            <div className="text-center">
-              <div 
-                style={{ color: currentColors.accent }}
-                className="text-3xl font-bold mb-2"
-              >
-                1M+
-              </div>
-              <div 
-                style={{ color: currentColors.text }}
-                className="text-sm"
-              >
-                Transactions/month
-              </div>
-            </div>
-            <div className="text-center">
-              <div 
-                style={{ color: currentColors.accent }}
-                className="text-3xl font-bold mb-2"
-              >
-                200+
-              </div>
-              <div 
-                style={{ color: currentColors.text }}
-                className="text-sm"
-              >
-                Team members
-              </div>
-            </div>
+                <div 
+                  style={{ color: currentColors.accent }}
+                  className="text-3xl font-bold mb-2"
+                >
+                  {stat.value}
+                </div>
+                <div 
+                  style={{ color: currentColors.text }}
+                  className="text-sm font-medium"
+                >
+                  {stat.label}
+                </div>
+              </motion.div>
+            ))}
           </motion.div>
         </motion.div>
       </div>
