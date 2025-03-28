@@ -1,6 +1,10 @@
 import { Hero } from './components/Hero';
 import { HowItWorks } from './components/HowItWorks';
 import { UseCases } from './components/UseCases';
+import { Features } from './components/Features';
+import { Pricing } from './components/Pricing';
+import { Form } from './components/Form';
+import { Contacts } from './components/Contacts';
 import { Background } from './components/Background';
 import { LandingData } from './types/landing';
 import lendingData from '../lending.json';
@@ -16,6 +20,14 @@ const App = () => {
         return <HowItWorks {...block.props} />;
       case 'use-cases':
         return <UseCases {...block.props} />;
+      case 'features':
+        return <Features {...block.props} />;
+      case 'pricing':
+        return <Pricing {...block.props} />;
+      case 'form':
+        return <Form {...block.props} />;
+      case 'contacts':
+        return <Contacts {...block.props} />;
       default:
         return null;
     }

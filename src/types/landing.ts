@@ -17,6 +17,10 @@ export interface HeroProps {
   subtitle: string;
   buttonText: string;
   buttonLink: string;
+  stats: Array<{
+    value: string;
+    label: string;
+  }>;
 }
 
 export interface HowItWorksProps {
@@ -79,4 +83,5 @@ export interface ContactsProps {
 export interface IconProps {
   name: string;
   className?: string;
+  style?: React.CSSProperties;
 } 

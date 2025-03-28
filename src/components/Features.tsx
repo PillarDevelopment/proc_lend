@@ -1,10 +1,9 @@
-import { UseCasesProps } from '../types/landing';
+import { FeaturesProps } from '../types/landing';
 import { motion } from 'framer-motion';
 import { useTheme } from '../hooks/useTheme';
 import { colors } from '../theme/colors';
-import { Icon } from './Icon';
 
-export const UseCases = ({ title, items }: UseCasesProps) => {
+export const Features = ({ title, items }: FeaturesProps) => {
   const { theme } = useTheme();
   const currentColors = colors[theme];
 
@@ -26,7 +25,7 @@ export const UseCases = ({ title, items }: UseCasesProps) => {
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {items.map((item, index) => (
             <motion.div
               key={index}
@@ -38,23 +37,30 @@ export const UseCases = ({ title, items }: UseCasesProps) => {
                 backgroundColor: currentColors.cardBg,
                 borderColor: currentColors.cardBorder,
               }}
-              className="p-6 rounded-lg border backdrop-blur-sm text-center hover:scale-105 transition-transform duration-300"
+              className="p-6 rounded-lg border backdrop-blur-sm hover:scale-105 transition-transform duration-300"
             >
-              <div 
-                style={{ backgroundColor: currentColors.iconBg }}
-                className="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center"
-              >
-                <Icon 
-                  name={item.icon} 
-                  style={{ color: currentColors.iconColor }}
-                />
+              <div className="flex items-center gap-4">
+                <div 
+                  style={{ backgroundColor: currentColors.iconBg }}
+                  className="w-12 h-12 rounded-full flex items-center justify-center"
+                >
+                  <svg 
+                    style={{ color: currentColors.iconColor }}
+                    className="w-6 h-6" 
+                    viewBox="0 0 24 24" 
+                    fill="none" 
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M9 12L11 14L15 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <p 
+                  style={{ color: currentColors.text }}
+                  className="text-lg font-medium"
+                >
+                  {item}
+                </p>
               </div>
-              <p 
-                style={{ color: currentColors.text }}
-                className="text-lg font-medium"
-              >
-                {item.text}
-              </p>
             </motion.div>
           ))}
         </div>
