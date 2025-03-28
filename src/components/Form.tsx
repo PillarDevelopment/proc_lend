@@ -3,13 +3,12 @@ import { motion } from 'framer-motion';
 import { useTheme } from '../hooks/useTheme';
 import { colors } from '../theme/colors';
 
-export const Form = ({ title, fields, buttonText, submitAction }: FormProps) => {
+export const Form = ({ title, fields, buttonText }: FormProps) => {
   const { theme } = useTheme();
   const currentColors = colors[theme];
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
     console.log('Form submitted');
   };
 
@@ -64,9 +63,9 @@ export const Form = ({ title, fields, buttonText, submitAction }: FormProps) => 
                   id={field.name}
                   name={field.name}
                   style={{
-                    backgroundColor: currentColors.hoverBg,
-                    borderColor: currentColors.cardBorder,
-                    color: currentColors.text,
+                    backgroundColor: currentColors.inputBg,
+                    borderColor: currentColors.inputBorder,
+                    color: currentColors.inputText,
                   }}
                   className="w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-opacity-50 transition-colors duration-300"
                   rows={4}
@@ -77,9 +76,9 @@ export const Form = ({ title, fields, buttonText, submitAction }: FormProps) => 
                   id={field.name}
                   name={field.name}
                   style={{
-                    backgroundColor: currentColors.hoverBg,
-                    borderColor: currentColors.cardBorder,
-                    color: currentColors.text,
+                    backgroundColor: currentColors.inputBg,
+                    borderColor: currentColors.inputBorder,
+                    color: currentColors.inputText,
                   }}
                   className="w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-opacity-50 transition-colors duration-300"
                 />
@@ -93,9 +92,9 @@ export const Form = ({ title, fields, buttonText, submitAction }: FormProps) => 
             transition={{ duration: 0.5, delay: fields.length * 0.1 }}
             type="submit"
             style={{
-              background: `linear-gradient(to right, ${currentColors.accent}, ${currentColors.background})`,
+              background: currentColors.buttonGradient,
               color: currentColors.text,
-              boxShadow: `0 4px 6px -1px ${currentColors.accent}30`,
+              boxShadow: currentColors.buttonShadow,
             }}
             className="w-full py-4 rounded-lg font-semibold text-lg hover:scale-105 hover:shadow-lg transition-all duration-300"
           >

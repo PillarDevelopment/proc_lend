@@ -54,20 +54,14 @@ export interface PricingProps {
   table: PricingTableItem[];
 }
 
-export interface FormField {
-  label: string;
-  name: string;
-  type: string;
-}
-
 export interface FormProps {
   title: string;
-  fields: FormField[];
-  buttonText: string;
-  submitAction: {
+  fields: {
+    name: string;
+    label: string;
     type: string;
-    url: string;
-  };
+  }[];
+  buttonText: string;
 }
 
 export interface ContactItem {
