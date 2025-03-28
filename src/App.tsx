@@ -8,6 +8,7 @@ import { Contacts } from './components/Contacts';
 import { Background } from './components/Background';
 import { LandingData } from './types/landing';
 import lendingData from '../lending.json';
+import { ThemeProvider } from './hooks/useTheme';
 
 const App = () => {
   const { page } = lendingData as LandingData;
@@ -34,16 +35,18 @@ const App = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black">
-      <Background />
-      <div className="relative z-10 text-white">
-        {page.blocks.map((block, index) => (
-          <div key={index}>
-            {renderBlock(block)}
-          </div>
-        ))}
+    <ThemeProvider>
+      <div className="min-h-screen">
+        <Background />
+        <div className="relative z-10">
+          {page.blocks.map((block, index) => (
+            <div key={index}>
+              {renderBlock(block)}
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </ThemeProvider>
   );
 };
 
