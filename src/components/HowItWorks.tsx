@@ -1,42 +1,91 @@
 import { HowItWorksProps } from '../types/landing';
 import { motion } from 'framer-motion';
+import { useTheme } from '../hooks/useTheme';
+import { colors } from '../theme/colors';
 
 export const HowItWorks = ({ title, steps, features }: HowItWorksProps) => {
+  const { theme } = useTheme();
+  const currentColors = colors[theme];
+
   return (
-    <section className="py-20">
+    <section className="py-20 relative">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12 text-white">{title}</h2>
-        
-        <div className="grid md:grid-cols-4 gap-8 mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-16"
+        >
+          <h2 
+            style={{ color: currentColors.text }}
+            className="text-4xl font-bold mb-4"
+          >
+            {title}
+          </h2>
+        </motion.div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {steps.map((step, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="text-center"
+              style={{
+                backgroundColor: currentColors.cardBg,
+                borderColor: currentColors.cardBorder,
+              }}
+              className="p-6 rounded-lg border backdrop-blur-sm"
             >
-              <div className="w-12 h-12 bg-[#FF0080] text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
+              <div 
+                style={{ color: currentColors.accent }}
+                className="text-2xl font-bold mb-4"
+              >
                 {index + 1}
               </div>
-              <p className="text-gray-300">{step}</p>
+              <p 
+                style={{ color: currentColors.text }}
+                className="text-lg"
+              >
+                {step}
+              </p>
             </motion.div>
           ))}
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
-          {features.map((feature, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-[#7928CA] bg-opacity-20 p-6 rounded-lg text-center backdrop-blur-sm"
-            >
-              <p className="text-gray-200 font-medium">{feature}</p>
-            </motion.div>
-          ))}
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="mt-16 text-center"
+        >
+          <div className="grid md:grid-cols-3 gap-8">
+            {features.map((feature, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                style={{
+                  backgroundColor: currentColors.cardBg,
+                  borderColor: currentColors.cardBorder,
+                }}
+                className="p-6 rounded-lg border backdrop-blur-sm"
+              >
+                <p 
+                  style={{ color: currentColors.text }}
+                  className="text-lg font-medium"
+                >
+                  {feature}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );

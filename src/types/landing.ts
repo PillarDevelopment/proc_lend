@@ -83,4 +83,5 @@ export interface ContactsProps {
 export interface IconProps {
   name: string;
   className?: string;
+  style?: React.CSSProperties;
 } 
